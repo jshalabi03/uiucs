@@ -1,4 +1,3 @@
-import CourseCard from "@/components/course-card";
 import CourseList from "@/components/course-list";
 import { courses } from "@/config/courses";
 
@@ -10,7 +9,7 @@ export default function Home() {
           UIUcS
         </h1>
         <h2 className="mt-2 text-gray-400 text-lg font-light lg:text-xl">
-          Explore UIUC's Computer Science Courses
+          Explore UIUC&apos;s Computer Science Courses
         </h2>
         <CourseList className="mt-4" courses={courses} />
       </div>
