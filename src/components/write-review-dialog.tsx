@@ -18,15 +18,8 @@ import { Course } from "@/config/courses";
 import StarRating from "./star-rating";
 import { Textarea } from "./ui/textarea";
 import { Icons } from "./icons";
-import { signIn, useSession } from "next-auth/react";
 
-export async function WriteReviewDialog({ course }: { course: Course }) {
-  const { data: session } = useSession();
-  const user = session?.user;
-  if (!user) {
-    await signIn("github");
-  }
-
+export function WriteReviewDialog({ course }: { course: Course }) {
   const [rating, setRating] = React.useState(0);
   const [reviewBody, setReviewBody] = React.useState("");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

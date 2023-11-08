@@ -10,6 +10,7 @@ interface CoursePageParams {
 }
 
 export default function CoursePage({ params: { courseId } }: CoursePageParams) {
+  console.log("courseid: ", courseId);
   const course = findCourse(courseId);
 
   if (!course) {

@@ -10,11 +10,13 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
-import { signOut } from "next-auth/react";
-import { User } from "next-auth";
 
 interface UserNavProps {
-  user: User;
+  user: {
+    name: string;
+    email: string;
+    image?: string;
+  };
 }
 
 export default function UserNav({ user }: UserNavProps) {
@@ -39,8 +41,8 @@ export default function UserNav({ user }: UserNavProps) {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          onClick={async () => {
-            await signOut();
+          onClick={() => {
+            /* @TODO implement signout logic here */
           }}
         >
           Log out

@@ -7,8 +7,8 @@ const FilledStar = () => <Icons.star className="w-6 h-6 text-yellow-300" />;
 const EmptyStar = () => (
   <Icons.star className="w-6 h-6 text-gray-300 dark:text-gray-500" />
 );
-const HoverStar = () => <Icons.star className="w-6 h-6 text-yellow-500" />;
 
+const HoverStar = FilledStar;
 interface StarRatingProps {
   className?: string;
   rating: number;

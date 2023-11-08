@@ -1,10 +1,10 @@
-import Header from "@/components/header";
-import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
-import Providers from "@/lib/providers";
 
+import Header from "@/components/header";
+import "@/styles/globals.css";
+
+import { Roboto_Mono } from "next/font/google";
 const font = Roboto_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,10 +25,8 @@ export default function RootLayout({
           font.className
         )}
       >
-        <Providers>
-          <Header />
-          {children}
-        </Providers>
+        <Header />
+        {children}
       </body>
     </html>
   );

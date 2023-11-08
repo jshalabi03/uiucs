@@ -1,7 +1,7 @@
 import { Course, courses } from "@/config/courses";
 
 type SubjectCode = string;
-type CourseNumber = string;
+type CourseNumber = number;
 
 function parseCourseId(courseId: string): {
   subjectCode: SubjectCode;
@@ -13,7 +13,7 @@ function parseCourseId(courseId: string): {
   if (subjectCode && courseNumber) {
     return {
       subjectCode: subjectCode.toUpperCase(),
-      courseNumber: courseNumber,
+      courseNumber: Number(courseNumber),
     };
   }
   throw new Error(`Invalid courseId: ${courseId}`);
@@ -26,4 +26,8 @@ export function findCourse(courseId: string): Course | null {
       (c) => c.subjectCode === subjectCode && c.courseNumber === courseNumber
     ) ?? null
   );
+}
+
+export function getCourseId(course: Course): string {
+  return `${course.subjectCode}${course.courseNumber}`;
 }

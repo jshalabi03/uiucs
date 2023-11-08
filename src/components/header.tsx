@@ -2,16 +2,14 @@
 
 import Link from "next/link";
 
-import { signIn, useSession } from "next-auth/react";
 import UserNav from "./user-nav";
 import { Button } from "./ui/button";
 import React from "react";
-import { getCurrentUser } from "@/lib/session";
 
-export default async function Header() {
+export default function Header() {
   const [isSigningIn, setIsSigningIn] = React.useState(false);
 
-  const user = await getCurrentUser();
+  const user = null;
 
   if (user) {
     return (
@@ -23,13 +21,16 @@ export default async function Header() {
   }
 
   return (
-    <div className="border border-b border-blue-950 bg-gray-300 flex justify-between p-4">
+    <div className="border border-b border-blue-950 bg-orange-300 flex items-center justify-between p-4">
       <Link href="/">Home</Link>
       <Button
         variant="ghost"
         onClick={() => {
           setIsSigningIn(true);
-          signIn("github");
+          /* @TODO implement logic for sign in with github provider */
+          setTimeout(() => {
+            setIsSigningIn(false);
+          }, 2000);
         }}
         disabled={isSigningIn}
       >
