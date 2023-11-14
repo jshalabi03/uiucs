@@ -39,7 +39,7 @@ export default function CourseCard({ course }: CourseCardParams) {
               <div className="flex items-center">
                 <div className="text-gray-700 mr-2">Rating:</div>
                 <div className="font-bold text-orange-500 text-lg">
-                  {course.Rating} {/* Make sure to have `rating` in your course data */}
+                  {course.Rating}
                 </div>
               </div>
             </div>
