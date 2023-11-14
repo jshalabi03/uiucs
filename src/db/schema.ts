@@ -7,6 +7,12 @@ import {
 } from "drizzle-orm/pg-core";
 import type { AdapterAccount } from "@auth/core/adapters";
 
+export const reviews = pgTable("review", {});
+
+/**
+ * Authentication Database Tables
+ */
+
 export const users = pgTable("user", {
   id: text("id").notNull().primaryKey(),
   name: text("name"),
