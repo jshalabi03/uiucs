@@ -5,17 +5,19 @@ import Link from "next/link";
 import UserNav from "./user-nav";
 import { Button } from "./ui/button";
 import React from "react";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
-export default function Header() {
+export default async function Header() {
   const [isSigningIn, setIsSigningIn] = React.useState(false);
 
-  const user = null;
+  const session = await getServerSession(authOptions);
 
-  if (user) {
+  if (session?.user) {
     return (
       <div className="border border-b border-blue-950 bg-orange-300 flex items-center justify-between p-4">
         <Link href="/">Home</Link>
-        <UserNav user={user} />
+        <UserNav user={session.user} />
       </div>
     );
   }
@@ -23,11 +25,10 @@ export default function Header() {
   return (
     <div className="border border-b border-blue-950 bg-orange-300 flex items-center justify-between p-4">
       <Link href="/">Home</Link>
-      <Button
+      {/* <Button
         variant="ghost"
         onClick={() => {
           setIsSigningIn(true);
-          /* @TODO implement logic for sign in with github provider */
           setTimeout(() => {
             setIsSigningIn(false);
           }, 2000);
@@ -35,7 +36,8 @@ export default function Header() {
         disabled={isSigningIn}
       >
         Sign in
-      </Button>
+      </Button> */}
+      <Link href="/api/auth/signin">Sign in</Link>
     </div>
   );
 }

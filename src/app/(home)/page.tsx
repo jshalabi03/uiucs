@@ -1,7 +1,12 @@
 import CourseList from "@/components/course-list";
 import { courses } from "@/config/courses";
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  console.log("session,", session);
+
   return (
     <main className="flex flex-col items-center justify-between p-24">
       <div className="max-w-5xl w-full items-center text-sm">
