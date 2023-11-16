@@ -36,13 +36,16 @@ export function ReviewForm({ course }: { course: Course }) {
         <div className="space-y-4 md:w-full">
           <div className="flex justify-between items-center space-x-4">
             <div className="space-y-2 w-3/4">
-              <Label htmlFor="overall">Overall</Label> - {overallRating}/10
+              <div className="flex justify-between">
+                <Label htmlFor="overall">Overall</Label>
+                <span className="font-bold">{overallRating.toFixed(1)}/10</span>
+              </div>
               <Slider
                 id="overall"
                 name="overall"
                 max={10}
                 min={0}
-                step={1}
+                step={0.1}
                 value={[overallRating]}
                 onValueChange={(val) => setOverallRating(val[0])}
               />
@@ -50,13 +53,18 @@ export function ReviewForm({ course }: { course: Course }) {
           </div>
           <div className="flex justify-between items-center space-x-4">
             <div className="space-y-2 w-3/4">
-              <Label htmlFor="workload">Workload</Label> - {workloadRating}/10
+              <div className="flex justify-between">
+                <Label htmlFor="workload">Workload</Label>
+                <span className="font-bold">
+                  {workloadRating.toFixed(1)}/10
+                </span>
+              </div>
               <Slider
                 id="workload"
                 name="workload"
                 max={10}
                 min={0}
-                step={1}
+                step={0.1}
                 value={[workloadRating]}
                 onValueChange={(val) => setWorkloadRating(val[0])}
               />
@@ -64,14 +72,18 @@ export function ReviewForm({ course }: { course: Course }) {
           </div>
           <div className="flex justify-between items-center space-x-4">
             <div className="space-y-2 w-3/4">
-              <Label htmlFor="difficulty">Difficulty</Label> -{" "}
-              {difficultyRating}/10
+              <div className="flex justify-between">
+                <Label htmlFor="difficulty">Difficulty</Label>
+                <span className="font-bold">
+                  {difficultyRating.toFixed(1)}/10
+                </span>
+              </div>
               <Slider
                 id="difficulty"
                 name="difficulty"
                 max={10}
                 min={0}
-                step={1}
+                step={0.1}
                 value={[difficultyRating]}
                 onValueChange={(val) => setDifficultyRating(val[0])}
               />
