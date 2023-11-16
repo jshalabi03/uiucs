@@ -8,10 +8,9 @@ import React from "react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-export default async function Header() {
-  const [isSigningIn, setIsSigningIn] = React.useState(false);
-
-  const session = await getServerSession(authOptions);
+export default function Header() {
+  // const session = await getServerSession(authOptions);
+  const session = { user: null };
 
   if (session?.user) {
     return (
@@ -37,7 +36,13 @@ export default async function Header() {
       >
         Sign in
       </Button> */}
-      <Link href="/api/auth/signin">Sign in</Link>
+      <Link
+        onClick={() => alert("sign in not implemented yet")}
+        // href="/api/auth/signin"
+        href=""
+      >
+        Sign in
+      </Link>
     </div>
   );
 }
