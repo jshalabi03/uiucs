@@ -89,7 +89,9 @@ export function ReviewForm({ course }: { course: Course }) {
               <SelectContent>
                 <SelectGroup>
                   {course.instructors.concat(["Other"]).map((instructor) => (
-                    <SelectItem value={instructor}>{instructor}</SelectItem>
+                    <SelectItem key={instructor} value={instructor}>
+                      {instructor}
+                    </SelectItem>
                   ))}
                 </SelectGroup>
               </SelectContent>
