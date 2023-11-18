@@ -20,27 +20,6 @@ interface CourseCardParams {
 }
 
 export default async function CourseCard({ course }: CourseCardParams) {
-  // const reviews = await db
-  //   .select()
-  //   .from(reviewsTable)
-  //   .where(eq(reviewsTable.courseId, getCourseId(course)));
-
-  // const numReviews = reviews.length;
-
-  // const calculateRating = useCallback(
-  //   (ratingType: keyof ReviewRatings) => {
-  //     return (
-  //       reviews.reduce((sum, review) => sum + review[ratingType], 0) /
-  //       numReviews
-  //     );
-  //   },
-  //   [reviews, numReviews]
-  // );
-
-  // const overallRating = calculateRating("overallRating");
-  // const difficultyRating = calculateRating("difficultyRating");
-  // const workloadRating = calculateRating("workloadRating");
-  // const usefulnessRating = calculateRating("usefulnessRating");
   const overallRating = 0;
   const difficultyRating = 0;
   const workloadRating = 0;
@@ -53,7 +32,7 @@ export default async function CourseCard({ course }: CourseCardParams) {
       passHref
     >
       <div className="cursor-pointer">
-        <Card className="transform transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-200 border border-gray-300">
+        <Card className="transform transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-200 border border-gray-800">
           <div
             style={{ backgroundColor: getColorForCourse(course) }}
             className={`flex flex-col space-y-4 p-4`}
@@ -104,4 +83,28 @@ export default async function CourseCard({ course }: CourseCardParams) {
       </div>
     </Link>
   );
+  
 }
+
+
+  // const reviews = await db
+  //   .select()
+  //   .from(reviewsTable)
+  //   .where(eq(reviewsTable.courseId, getCourseId(course)));
+
+  // const numReviews = reviews.length;
+
+  // const calculateRating = useCallback(
+  //   (ratingType: keyof ReviewRatings) => {
+  //     return (
+  //       reviews.reduce((sum, review) => sum + review[ratingType], 0) /
+  //       numReviews
+  //     );
+  //   },
+  //   [reviews, numReviews]
+  // );
+
+  // const overallRating = calculateRating("overallRating");
+  // const difficultyRating = calculateRating("difficultyRating");
+  // const workloadRating = calculateRating("workloadRating");
+  // const usefulnessRating = calculateRating("usefulnessRating");
