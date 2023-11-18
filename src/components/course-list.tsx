@@ -25,12 +25,12 @@ export default function CourseList({ className, courses }: CourseListProps) {
   }, [courses, searchTerm]);
 
   return (
-    <div className={className}>
+    <div className={className ?? ""}>
       <SearchBar
         inputValue={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <div className="flex flex-col space-y-4 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
         {filteredCourses.map((course, idx) => (
           <CourseCard key={getCourseId(course)} course={course} />
         ))}

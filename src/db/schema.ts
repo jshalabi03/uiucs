@@ -4,20 +4,32 @@ import {
   text,
   primaryKey,
   integer,
+  real,
 } from "drizzle-orm/pg-core";
 import type { AdapterAccount } from "@auth/core/adapters";
 
-export const reviews = pgTable("review", {
-  id: text("id").notNull().primaryKey(),
-  courseId: text("course_id").notNull(),
-  reviewBody: text("review_body"),
-  overallRating: integer("overall_rating"),
-  difficultyRating: integer("difficulty_rating"),
-  workloadRating: integer("workload_rating"),
-});
+export const reviews = pgTable(
+  "review",
+  {
+    userId: text("userId")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    courseId: text("course_id").notNull(),
+    reviewBody: text("review_body").notNull(),
+    overallRating: real("overall_rating").notNull(),
+    difficultyRating: real("difficulty_rating").notNull(),
+    workloadRating: real("workload_rating").notNull(),
+    usefulnessRating: real("usefulness_rating").notNull(),
+    instructor: text("instructor").notNull().default("Other"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (review) => ({
+    compoundKey: primaryKey(review.userId, review.courseId),
+  })
+);
 
 /**
- * Authentication Database Tables
+ * Next-Auth DB Tables
  */
 
 export const users = pgTable("user", {

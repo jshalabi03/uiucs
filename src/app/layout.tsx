@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import "@/styles/globals.css";
 
 import { Roboto_Mono as FontSans } from "next/font/google";
+import Providers from "@/lib/providers";
 const font = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
@@ -25,8 +26,10 @@ export default function RootLayout({
           font.className
         )}
       >
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );
