@@ -1,0 +1,41 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1699480985993,
+      "tag": "0000_majestic_kate_bishop",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1700304996511,
+      "tag": "0001_panoramic_spencer_smythe",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1700305248593,
+      "tag": "0002_curly_post",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1700305702916,
+      "tag": "0003_nasty_marauders",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1700308129092,
+      "tag": "0004_sudden_queen_noir",
+      "breakpoints": true
+    }
+  ]
+}

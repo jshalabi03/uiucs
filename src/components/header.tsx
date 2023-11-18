@@ -5,17 +5,16 @@ import Link from "next/link";
 import UserNav from "./user-nav";
 import { Button } from "./ui/button";
 import React from "react";
+import { signIn, useSession } from "next-auth/react";
 
 export default function Header() {
-  const [isSigningIn, setIsSigningIn] = React.useState(false);
+  const { data } = useSession();
 
-  const user = null;
-
-  if (user) {
+  if (data?.user) {
     return (
       <div className="border border-b border-blue-950 bg-orange-300 flex items-center justify-between p-4">
         <Link href="/">Home</Link>
-        <UserNav user={user} />
+        <UserNav user={data.user} />
       </div>
     );
   }
@@ -24,15 +23,10 @@ export default function Header() {
     <div className="border border-b border-blue-950 bg-orange-300 flex items-center justify-between p-4">
       <Link href="/">Home</Link>
       <Button
-        variant="ghost"
+        variant="outline"
         onClick={() => {
-          setIsSigningIn(true);
-          /* @TODO implement logic for sign in with github provider */
-          setTimeout(() => {
-            setIsSigningIn(false);
-          }, 2000);
+          signIn("google");
         }}
-        disabled={isSigningIn}
       >
         Sign in
       </Button>
