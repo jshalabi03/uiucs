@@ -5,18 +5,16 @@ import Link from "next/link";
 import UserNav from "./user-nav";
 import { Button } from "./ui/button";
 import React from "react";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
+import { signIn, useSession } from "next-auth/react";
 
 export default function Header() {
-  // const session = await getServerSession(authOptions);
-  const session = { user: null };
+  const { data } = useSession();
 
-  if (session?.user) {
+  if (data?.user) {
     return (
       <div className="border border-b border-blue-950 bg-orange-300 flex items-center justify-between p-4">
         <Link href="/">Home</Link>
-        <UserNav user={session.user} />
+        <UserNav user={data.user} />
       </div>
     );
   }
@@ -24,25 +22,14 @@ export default function Header() {
   return (
     <div className="border border-b border-blue-950 bg-orange-300 flex items-center justify-between p-4">
       <Link href="/">Home</Link>
-      {/* <Button
-        variant="ghost"
+      <Button
+        variant="outline"
         onClick={() => {
-          setIsSigningIn(true);
-          setTimeout(() => {
-            setIsSigningIn(false);
-          }, 2000);
+          signIn("google");
         }}
-        disabled={isSigningIn}
       >
         Sign in
-      </Button> */}
-      <Link
-        onClick={() => alert("sign in not implemented yet")}
-        // href="/api/auth/signin"
-        href=""
-      >
-        Sign in
-      </Link>
+      </Button>
     </div>
   );
 }
