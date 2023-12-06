@@ -32,7 +32,7 @@ export default async function ReviewList({ reviews }: ReviewListParams) {
         return (
           <>
             {index > 0 ? <Separator /> : null}
-            <div className="flex gap-4 my-6">
+            <div className="border flex gap-4 my-6 w-[950px]">
               <Avatar className="w-10 h-10 border">
                 <AvatarImage alt={author.name ?? ""} src={author.image ?? ""} />
                 <AvatarFallback>{author.name}</AvatarFallback>

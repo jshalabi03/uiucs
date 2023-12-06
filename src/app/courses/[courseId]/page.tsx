@@ -7,6 +7,7 @@ import { getCourseById } from "@/lib/course-utils";
 import Link from "next/link";
 import { OpenReviewDialog } from "@/components/open-review-dialog";
 import ReviewList from "@/components/review-list";
+import ReviewStats from "@/components/review-stats";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { db } from "@/db";
@@ -40,6 +41,7 @@ export default async function CoursePage({
           </Link>
         </Button>
       </div>
+      <ReviewStats/>
       <ReviewList reviews={reviews} />
     </>
   );
