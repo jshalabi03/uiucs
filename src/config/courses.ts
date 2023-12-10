@@ -20,7 +20,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 101,
-    title: "Intro Computing: Engrg &amp; Sci",
+    title: "Intro Computing: Engrg & Sci",
     description:
       "Fundamental principles, concepts, and methods of computing, with emphasis on applications in the physical sciences and engineering. Basic problem solving and programming techniques; fundamental algorithms and data structures; use of computers in solving engineering and scientific problems. Intended for engineering and science majors. Prerequisite: One of MATH 220 or MATH 221 or MATH 231 or MATH 241.",
     creditHoursStr: "3 hours",
@@ -290,7 +290,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 210,
-    title: "Ethical &amp; Professional Issues",
+    title: "Ethical & Professional Issues",
     description:
       "Ethics for the computing profession. Ethical decision-making; licensing; intellectual property, freedom of information, and privacy. Credit is not given for both CS 210 and either CS 211 or ECE 316. Prerequisite: CS 225. Junior standing required.",
     creditHoursStr: "2 hours",
@@ -513,7 +513,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 361,
-    title: "Probability &amp; Statistics for Computer Science",
+    title: "Probability & Statistics for Computer Science",
     description:
       "Introduction to probability theory and statistics with applications to computer science. Topics include: visualizing datasets, summarizing data, basic descriptive statistics, conditional probability, independence, Bayes theorem, random variables, joint and conditional distributions, expectation, variance and covariance, central limit theorem. Markov inequality, Chebyshev inequality, law of large numbers, Markov chains, simulation, the PageRank algorithm, populations and sampling, sample mean, standard error, maximum likelihood estimation, Bayes estimation, hypothesis testing, confidence intervals, linear regression, principal component analysis, classification, and decision trees. Same as STAT 361. Credit is not given for both CS 361 and ECE 313. Prerequisite: MATH 220 or MATH 221; credit or concurrent registration in one of MATH 225, MATH 257, MATH 415, MATH 416 or ASRM 406. For majors only.",
     creditHoursStr: "3 hours",
@@ -538,7 +538,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 374,
-    title: "Introduction to Algorithms &amp; Models of Computation",
+    title: "Introduction to Algorithms & Models of Computation",
     description:
       "Analysis of algorithms, major paradigms of algorithm design including recursive algorithms, divide-and-conquer algorithms, dynamic programming, greedy algorithms, and graph algorithms. Formal models of computation including finite automata and Turing machines. Limitations of computation arising from fundamental notions of algorithm and from complexity-theoretic constraints. Reductions, undecidability and NP-completeness. Same as ECE 374. Prerequisite: One of CS 173, MATH 213; CS 225.",
     creditHoursStr: "4 hours",
@@ -722,7 +722,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 420,
-    title: "Parallel Progrmg: Sci &amp; Engrg",
+    title: "Parallel Progrmg: Sci & Engrg",
     description:
       "Fundamental issues in design and development of parallel programs for various types of parallel computers. Various programming models according to both machine type and application area. Cost models, debugging, and performance evaluation of parallel programs with actual application examples. Same as CSE 402 and ECE 492. 3 undergraduate hours. 3 or 4 graduate hours. Prerequisite: CS 225.",
     creditHoursStr: "3 OR 4 hours",
@@ -731,7 +731,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 421,
-    title: "Programming Languages &amp; Compilers",
+    title: "Programming Languages & Compilers",
     description:
       "Structure of programming languages and their implementation. Basic language design principles; abstract data types; functional languages; type systems; object-oriented languages. Basics of lexing, parsing, syntax-directed translation, semantic analysis, and code generation. 3 undergraduate hours. 3 or 4 graduate hours. Prerequisite: One of CS 233, CS 240 or CS 340; CS 374 or ECE 374; one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, BIOE 210.",
     creditHoursStr: "3 OR 4 hours",
@@ -860,7 +860,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 434,
-    title: "Mobile Computing &amp; Application",
+    title: "Mobile Computing & Application",
     description: "Same as ECE 434. See ECE 434.",
     creditHoursStr: "3 OR 4 hours",
     instructors: ["Roy Choudhury, R"],
@@ -1185,7 +1185,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 481,
-    title: "Advanced Topics in Stochastic Processes &amp; Applications",
+    title: "Advanced Topics in Stochastic Processes & Applications",
     description: "Same as IE 410. See IE 410.",
     creditHoursStr: "3 OR 4 hours",
     instructors: ["Jacobson, S"],
@@ -1617,7 +1617,7 @@ export const courses: Array<Course> = [
   {
     subjectCode: "CS",
     courseNumber: 556,
-    title: "Iterative &amp; Multigrid Methods",
+    title: "Iterative & Multigrid Methods",
     description:
       "Comprehensive treatment of algebraic and multigrid iterative methods to solve systems of equations, primarily linear equations arising from discretization of partial differential equations. Same as CSE 511.",
     creditHoursStr: "4 hours",
