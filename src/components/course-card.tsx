@@ -73,13 +73,13 @@ export default async function CourseCard({ course }: CourseCardParams) {
                   {course.creditHoursStr}
                 </span>
               </div>
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <div className="text-gray-700 mr-2">Number of reviews:</div>
                 <div className={`font-bold text-lg`}>{numReviews}</div>
-              </div>
+              </div> */}
             </div>
           </div>
-          <div className="p-4 bg-white">
+          {/* <div className="p-4 bg-white">
             <div className="text-gray-700">Ratings</div>
             <div className="grid grid-cols-2">
               <div className="text-center">
@@ -99,7 +99,7 @@ export default async function CourseCard({ course }: CourseCardParams) {
                 <div className="text-xs text-gray-600">Usefulness</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </Card>
       </div>
     </Link>
