@@ -35,7 +35,7 @@ export default async function ReviewList({ reviews }: ReviewListParams) {
           return (
             <>
               {index > 0 ? <Separator /> : null}
-              <div className="border flex gap-4 my-6 w-[950px]">
+              <div className="border-2 border-gray-300 rounded-lg p-6 flex gap-4 my-6 w-[950px]">
                 <Avatar className="w-10 h-10 border">
                   <AvatarImage
                     alt={author.name ?? ""}
@@ -50,11 +50,40 @@ export default async function ReviewList({ reviews }: ReviewListParams) {
                       <time className="text-sm text-zinc-500 dark:text-zinc-400">
                         {review.createdAt.toDateString()}
                       </time>
+                      <p className="text-sm text-zinc-500 mt-2">
+                        Taken with{" "}
+                        <span className="font-bold">{review.instructor}</span>
+                      </p>
                     </div>
                   </div>
-                  <div className="text-sm leading-loose text-zinc-500 dark:text-zinc-400">
+                  <Separator />
+                  <div className="text-md leading-loose text-gray-600 dark:text-zinc-400">
                     <p>{review.reviewBody}</p>
                   </div>
+                  <Separator />
+                  <div className="flex flex-col space-y-2">
+                    <div>
+                      Overall:{" "}
+                      <span className="font-bold">{review.overallRating}</span>
+                    </div>
+                    <div>
+                      Difficulty:{" "}
+                      <span className="font-bold">
+                        {review.difficultyRating}
+                      </span>
+                    </div>
+                    <div>
+                      Workload:{" "}
+                      <span className="font-bold">{review.workloadRating}</span>
+                    </div>
+                    <div>
+                      Usefulness:{" "}
+                      <span className="font-bold">
+                        {review.usefulnessRating}
+                      </span>
+                    </div>
+                  </div>
+                  {/* <pre>{JSON.stringify(review, null, 2)}</pre> */}
                 </div>
               </div>
             </>
