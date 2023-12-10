@@ -10,9 +10,9 @@ export default function Header() {
   const { data } = useSession();
 
   const logo = (
-    <img 
-      src="/Logo.png" 
-      alt="Logo" 
+    <img
+      src="/Logo.png"
+      alt="Logo"
       className="absolute top-1/2 left-1 -translate-y-1/2 h-16" // Tailwind classes for positioning and size
     />
   );
@@ -21,7 +21,9 @@ export default function Header() {
     return (
       <div className="relative border border-b border-blue-950 bg-orange-300 flex items-center justify-between px-4 py-2">
         {logo}
-        <Link href="/" className="pl-24">Home</Link>
+        <Link href="/" className="pl-24">
+          Home
+        </Link>
         <UserNav user={data.user} />
       </div>
     );
@@ -30,7 +32,9 @@ export default function Header() {
   return (
     <div className="relative border border-b border-blue-950 bg-orange-300 flex items-center justify-between px-4 py-2">
       {logo}
-      <Link href="/" className="pl-24">Home</Link>
+      <Link href="/" className="pl-24">
+        Home
+      </Link>
       <Button
         variant="outline"
         onClick={() => {

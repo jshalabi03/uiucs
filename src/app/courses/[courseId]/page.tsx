@@ -7,7 +7,7 @@ import { getCourseById } from "@/lib/course-utils";
 import Link from "next/link";
 import { OpenReviewDialog } from "@/components/open-review-dialog";
 import ReviewList from "@/components/review-list";
-import ReviewStats from "@/components/review-stats";
+import ReviewStats, { CourseStatistics } from "@/components/review-stats";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { db } from "@/db";
@@ -31,6 +31,30 @@ export default async function CoursePage({
     .from(reviewsTable)
     .where(eq(reviewsTable.courseId, courseId));
 
+  const stats: CourseStatistics = reviews.reduce(
+    (acc, review) => {
+      acc.overallRating += review.overallRating;
+      acc.workloadRating += review.workloadRating;
+      acc.difficultyRating += review.difficultyRating;
+      acc.usefulnessRating += review.usefulnessRating;
+      acc.numReviews += 1;
+      return acc;
+    },
+    {
+      overallRating: 0,
+      workloadRating: 0,
+      difficultyRating: 0,
+      usefulnessRating: 0,
+      numReviews: 0,
+    }
+  );
+
+  // Calculate averages
+  stats.overallRating /= stats.numReviews;
+  stats.workloadRating /= stats.numReviews;
+  stats.difficultyRating /= stats.numReviews;
+  stats.usefulnessRating /= stats.numReviews;
+
   return (
     <>
       <div className="flex flex-row text-center align-center space-x-2">
@@ -41,7 +65,7 @@ export default async function CoursePage({
           </Link>
         </Button>
       </div>
-      <ReviewStats/>
+      <ReviewStats stats={stats} />
       <ReviewList reviews={reviews} />
     </>
   );
