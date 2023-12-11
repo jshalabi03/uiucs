@@ -12,7 +12,6 @@ interface CourseListProps {
 }
 
 export default function CourseList({ className, courses }: CourseListProps) {
-  if (!courses.length) return null;
   const [searchTerm, setSearchTerm] = React.useState("");
 
   const filteredCourses = React.useMemo(() => {
