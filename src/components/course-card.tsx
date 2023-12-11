@@ -19,34 +19,7 @@ interface CourseCardParams {
   course: Course;
 }
 
-export default async function CourseCard({ course }: CourseCardParams) {
-  // const reviews = await db
-  //   .select()
-  //   .from(reviewsTable)
-  //   .where(eq(reviewsTable.courseId, getCourseId(course)));
-
-  // const numReviews = reviews.length;
-
-  // const calculateRating = useCallback(
-  //   (ratingType: keyof ReviewRatings) => {
-  //     return (
-  //       reviews.reduce((sum, review) => sum + review[ratingType], 0) /
-  //       numReviews
-  //     );
-  //   },
-  //   [reviews, numReviews]
-  // );
-
-  // const overallRating = calculateRating("overallRating");
-  // const difficultyRating = calculateRating("difficultyRating");
-  // const workloadRating = calculateRating("workloadRating");
-  // const usefulnessRating = calculateRating("usefulnessRating");
-  const overallRating = 0;
-  const difficultyRating = 0;
-  const workloadRating = 0;
-  const usefulnessRating = 0;
-  const numReviews = 0;
-
+export default function CourseCard({ course }: CourseCardParams) {
   return (
     <Link
       href={`/courses/${course.subjectCode}${course.courseNumber}`}
