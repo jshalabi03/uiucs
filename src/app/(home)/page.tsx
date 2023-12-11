@@ -3,7 +3,7 @@ import { courses } from "@/config/courses";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 
-export default async function Home() {
+export default function Home() {
   // const session = await getServerSession(authOptions);
   // console.log("session,", session);
 
