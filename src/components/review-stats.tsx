@@ -114,7 +114,22 @@ interface GeneralStatsProps {
 function GeneralStats({ stats }: GeneralStatsProps) {
   return (
     <div className="flex flex-col">
-      <pre>{JSON.stringify(stats, null, 2)}</pre>
+      <div className="flex flex-col space-y-2">
+        <div>
+          Overall: <span className="font-bold">{stats.overallRating}</span>
+        </div>
+        <div>
+          Difficulty:{" "}
+          <span className="font-bold">{stats.difficultyRating}</span>
+        </div>
+        <div>
+          Workload: <span className="font-bold">{stats.workloadRating}</span>
+        </div>
+        <div>
+          Usefulness:{" "}
+          <span className="font-bold">{stats.usefulnessRating}</span>
+        </div>
+      </div>
     </div>
   );
 }

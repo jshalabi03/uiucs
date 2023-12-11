@@ -65,7 +65,7 @@ export default async function CoursePage({
           </Link>
         </Button>
       </div>
-      <ReviewStats stats={stats} />
+      {stats.numReviews === 0 ? null : <ReviewStats stats={stats} />}
       <ReviewList reviews={reviews} />
     </>
   );
