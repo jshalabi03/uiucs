@@ -52,7 +52,9 @@ const OverallRating = ({
 }) => {
   return (
     <div className="flex flex-col items-center justify-center h-full">
-      <div className="text-4xl font-bold mb-2">{overallRating}/10.0</div>
+      <div className="text-4xl font-bold mb-2">
+        {overallRating.toFixed(2)}/10.0
+      </div>
       <div className="text-lg mb-4">{numReviews} Ratings</div>
       {/* <div className="flex"> {[...Array(5)].map((_, i) => (
           <svg
@@ -116,18 +118,28 @@ function GeneralStats({ stats }: GeneralStatsProps) {
     <div className="flex flex-col">
       <div className="flex flex-col space-y-2">
         <div>
-          Overall: <span className="font-bold">{stats.overallRating}</span>
+          Overall:{" "}
+          <span className="font-bold">
+            {stats.overallRating.toFixed(1)}/10.0
+          </span>
         </div>
         <div>
           Difficulty:{" "}
-          <span className="font-bold">{stats.difficultyRating}</span>
+          <span className="font-bold">
+            {stats.difficultyRating.toFixed(1)}/10.0
+          </span>
         </div>
         <div>
-          Workload: <span className="font-bold">{stats.workloadRating}</span>
+          Workload:{" "}
+          <span className="font-bold">
+            {stats.workloadRating.toFixed(1)} hours a week
+          </span>{" "}
         </div>
         <div>
           Usefulness:{" "}
-          <span className="font-bold">{stats.usefulnessRating}</span>
+          <span className="font-bold">
+            {stats.usefulnessRating.toFixed(1)}/10.0
+          </span>
         </div>
       </div>
     </div>
