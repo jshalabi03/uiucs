@@ -7,6 +7,7 @@ import {
   real,
 } from "drizzle-orm/pg-core";
 import type { AdapterAccount } from "@auth/core/adapters";
+import { InferModelFromColumns } from "drizzle-orm";
 
 export const reviews = pgTable(
   "review",
